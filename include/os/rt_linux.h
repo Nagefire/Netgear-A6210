@@ -54,17 +54,11 @@
 #include <linux/pid.h>
 
 #ifdef RT_CFG80211_SUPPORT
-#if (LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,28))
 #include <net/mac80211.h>
-#else /* LINUX_VERSION_CODE */
-#undef RT_CFG80211_SUPPORT
-#endif /* LINUX_VERSION_CODE */
 #endif /* RT_CFG80211_SUPPORT */
 
 /* must put the definition before include "os/rt_linux_cmm.h" */
-#if LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,29)
 #define KTHREAD_SUPPORT 1
-#endif
 
 #ifdef KTHREAD_SUPPORT
 #include <linux/err.h>
@@ -83,14 +77,7 @@
 #undef STA_WSC_INCLUDED
 #undef WSC_INCLUDED
 
-#ifdef KTHREAD_SUPPORT
-#if LINUX_VERSION_CODE < KERNEL_VERSION(2,6,4)
-#error "This kernel version doesn't support kthread!!"
-#endif
-#endif
-
 typedef struct urb *purbb_t;
-
 
 /***********************************************************************************
  *	Profile related sections
@@ -155,18 +142,14 @@ typedef struct wireless_dev	* PWIRELESS_DEV;
 typedef struct sk_buff 		* PNDIS_PACKET;
 typedef PNDIS_PACKET		* PPNDIS_PACKET;
 
-typedef	ra_dma_addr_t		NDIS_PHYSICAL_ADDRESS;
+typedef ra_dma_addr_t		NDIS_PHYSICAL_ADDRESS;
 typedef void			* NDIS_HANDLE;
 typedef char 			* PNDIS_BUFFER;
 
 typedef struct ifreq		NET_IOCTL;
 typedef struct ifreq		* PNET_IOCTL;
 
-#if LINUX_VERSION_CODE >= KERNEL_VERSION(2,6,27)
 typedef	struct pid *		RTMP_OS_PID;
-#else
-typedef pid_t 			RTMP_OS_PID;
-#endif
 
 typedef struct semaphore	OS_SEM;
 
@@ -254,7 +237,7 @@ struct os_lock  {
 }
 
 #define OS_NdisFreeSpinLock(lock)			\
-	do{}while(0)
+	do {} while(0)
 
 
 #define OS_SEM_LOCK(__lock)				\
@@ -803,13 +786,8 @@ typedef struct usb_device_id USB_DEVICE_ID;
 #define RTUSB_ALLOC_URB(iso)		usb_alloc_urb(iso, GFP_ATOMIC)
 #define RTUSB_SUBMIT_URB(pUrb)		usb_submit_urb(pUrb, GFP_ATOMIC)
 
-#if LINUX_VERSION_CODE >= KERNEL_VERSION(2, 6, 35)
 #define RTUSB_URB_ALLOC_BUFFER(_dev, _size, _dma)	usb_alloc_coherent(_dev, _size, GFP_ATOMIC, _dma)
 #define RTUSB_URB_FREE_BUFFER(_dev, _size, _addr, _dma)	usb_free_coherent(_dev, _size, _addr, _dma)
-#else
-#define RTUSB_URB_ALLOC_BUFFER(_dev, _size, _dma)	usb_buffer_alloc(_dev, _size, GFP_ATOMIC, _dma)
-#define RTUSB_URB_FREE_BUFFER(_dev, _size, _addr, _dma)	usb_buffer_free(_dev, _size, _addr, _dma)
-#endif /* LINUX_VERSION_CODE */
 
 /* Prototypes of completion funuc. */
 #define RtmpUsbBulkOutDataPacketComplete		RTUSBBulkOutDataPacketComplete

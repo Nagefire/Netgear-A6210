@@ -33,8 +33,8 @@ struct _RTMP_ADAPTER;
 #define EXT_PA_2G_ONLY		0x2
 
 #define INT_PA_2G_5G		0x3
-#define INT_PA_5G			0x2
-#define INT_PA_2G			0x1
+#define INT_PA_5G		0x2
+#define INT_PA_2G		0x1
 
 #define MAX_CHECK_COUNT 200
 

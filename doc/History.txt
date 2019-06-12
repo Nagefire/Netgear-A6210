@@ -1,3 +1,6 @@
+[V3.0.0]
+	1. De-obfuscated `do_gettimeval()`
+	2. De-obfuscated `SUBDIRS`
 [V2.x.x.x]
 	P4V. Test
 [V2.5.0.0]
