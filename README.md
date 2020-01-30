@@ -1,6 +1,6 @@
 # Netgear-A6210
 ## Deprecation Warning
-This fork is deprecated, the main repository is now found at
+This fork is deprecated, the main repository found at the link below is maintained
 https://github.com/Netgear-A6210-linux-driver/Netgear-A6210
 Please use and support this fork.
 
@@ -15,16 +15,10 @@ Linux kernel version up to 5.0.5 has been tested.
 
 To build the driver, follow these steps:
 
-	$ git clone https://gitlab.com/nagefire/netgear-a6210.git
-	$ cd netgear-a6210
-	$ make
-	$ sudo make install
-
-or use the install script:
-
-	$ git clone https://gitlab.com/nagefire/netgear-a6210.git
-	$ cd netgear-a6210
-	$ ./install.sh
+    $ git clone https://github.com/kaduke/Netgear-A6210
+    $ cd Netgear-A6210
+    $ make
+    $ sudo make install
 
 The driver is mostly tested on 64 bit Ubuntu 15.10 and Debian 8.3 with NETGEAR AC1200
 High Gain Wifi USB Adapter. Some other distro/dongle combinations work as well, for
