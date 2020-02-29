@@ -11,11 +11,11 @@ This driver supports Ralink / Mediatek mt766u, mt7632u and mt7612u chipsets.
 In particular, the driver supports several USB dongles such as Netgear-A6210,
 ASUS USB-AC55, ASUS USB-N53 and EDUP EP-AC1601.
 
-Linux kernel version up to 5.0.5 has been tested.
+Linux kernel version up to 5.5.5 has been tested for x86_64.
 
 To build the driver, follow these steps:
 
-    $ git clone https://github.com/kaduke/Netgear-A6210
+    $ git clone https://github.com/Netgear-A6210-linux-driver/Netgear-A6210
     $ cd Netgear-A6210
     $ make
     $ sudo make install
@@ -23,7 +23,7 @@ To build the driver, follow these steps:
 The driver is mostly tested on 64 bit Ubuntu 15.10 and Debian 8.3 with NETGEAR AC1200
 High Gain Wifi USB Adapter. Some other distro/dongle combinations work as well, for
 example Linux Mint 17.3 "Rosa" - KDE (32-bit)/ASUS USB-N53 seems to work flawlessly
-(as reported by Roland Bauer). I have tested it up kernel version 5.0.5 with Arch Linux
+(as reported by Roland Bauer). I have tested it up kernel version 5.5.5 with Arch Linux
 x86_64 and Arch Linux ARMv7 (Raspberry Pi 2 Model B).
 
 The supported chipsets can be present in other devices. To include additional
