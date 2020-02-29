@@ -798,7 +798,7 @@ void CFG80211OS_Scaning(void *pCB, UINT32 ChanId, UCHAR *pFrame, UINT32 FrameLen
 	}
 
 	if (IdChan >= pBand->n_channels) {
-		DBGPRINT(RT_DEBUG_ERROR, 
+		DBGPRINT(RT_DEBUG_ERROR,
 			("80211> Can not find any chan info! ==> %d[%d],[%d] \n",
 			ChanId, CenFreq, pBand->n_channels));
 		return;
@@ -809,10 +809,12 @@ void CFG80211OS_Scaning(void *pCB, UINT32 ChanId, UCHAR *pFrame, UINT32 FrameLen
 		RSSI = RSSI * 100;
 	}
 
-#if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 0, 0)
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(5,0,0)
 	if (!mgmt->u.probe_resp.timestamp) {
 		struct timespec64 tstamp;
+
 		ktime_get_real_ts64(&tstamp);
+
 		mgmt->u.probe_resp.timestamp = ((UINT64)tstamp.tv_sec * 1000000) + tstamp.tv_nsec;
 	}
 #else

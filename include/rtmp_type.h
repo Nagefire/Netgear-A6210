@@ -172,7 +172,7 @@ typedef struct _QUEUE_HEADER {
 
 typedef struct _CR_REG {
 	UINT32 flags;
-	UINT32 offset;	
+	UINT32 offset;
 	UINT32 value;
 } CR_REG, *PCR_REG;
 
@@ -191,4 +191,3 @@ struct mt_dev_priv{
 };
 
 #endif /* __RTMP_TYPE_H__ */
-

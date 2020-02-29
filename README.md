@@ -1,4 +1,11 @@
 # Netgear-A6210
+## Deprecation Warning
+This fork is deprecated, the main repository found at the link below is maintained
+https://github.com/Netgear-A6210-linux-driver/Netgear-A6210
+Please use and support this fork.
+
+## Legacy information
+
 This driver supports Ralink / Mediatek mt766u, mt7632u and mt7612u chipsets.
 
 In particular, the driver supports several USB dongles such as Netgear-A6210,

@@ -30,13 +30,13 @@
 
 extern UCHAR ZeroSsid[32];
 
-static void ReservedAction(PRTMP_ADAPTER pAd, MLME_QUEUE_ELEM *Elem);
+static void ReservedAction(RTMP_ADAPTER *pAd, MLME_QUEUE_ELEM *Elem);
 static void MlmeADDBAAction(RTMP_ADAPTER *pAd, MLME_QUEUE_ELEM *Elem);
-static void PeerBAAction(PRTMP_ADAPTER pAd, MLME_QUEUE_ELEM *Elem);
-static void MlmeQOSAction(PRTMP_ADAPTER pAd, MLME_QUEUE_ELEM *Elem);
-static void MlmeDLSAction(PRTMP_ADAPTER pAd, MLME_QUEUE_ELEM *Elem);
-static void MlmeInvalidAction(PRTMP_ADAPTER pAd, MLME_QUEUE_ELEM *Elem);
-static void PeerQOSAction(PRTMP_ADAPTER pAd, MLME_QUEUE_ELEM *Elem);
+static void PeerBAAction(RTMP_ADAPTER *pAd, MLME_QUEUE_ELEM *Elem);
+static void MlmeQOSAction(RTMP_ADAPTER *pAd, MLME_QUEUE_ELEM *Elem);
+static void MlmeDLSAction(RTMP_ADAPTER *pAd, MLME_QUEUE_ELEM *Elem);
+static void MlmeInvalidAction(RTMP_ADAPTER *pAd, MLME_QUEUE_ELEM *Elem);
+static void PeerQOSAction(RTMP_ADAPTER *pAd, MLME_QUEUE_ELEM *Elem);
 
 #ifdef DOT11N_DRAFT3
 void SendBSS2040CoexistMgmtAction(RTMP_ADAPTER *pAd, UCHAR Wcid, UCHAR apidx,
@@ -45,11 +45,11 @@ void SendBSS2040CoexistMgmtAction(RTMP_ADAPTER *pAd, UCHAR Wcid, UCHAR apidx,
 static void Send2040CoexistAction(RTMP_ADAPTER *pAd, UCHAR  Wcid, BOOLEAN bAddIntolerantCha);
 #endif
 
-static void PeerPublicAction(PRTMP_ADAPTER pAd, MLME_QUEUE_ELEM *Elem);
-static void PeerRMAction(PRTMP_ADAPTER pAd, MLME_QUEUE_ELEM *Elem);
-static void PeerHTAction(PRTMP_ADAPTER pAd, MLME_QUEUE_ELEM *Elem);
+static void PeerPublicAction(RTMP_ADAPTER *pAd, MLME_QUEUE_ELEM *Elem);
+static void PeerRMAction(RTMP_ADAPTER *pAd, MLME_QUEUE_ELEM *Elem);
+static void PeerHTAction(RTMP_ADAPTER *pAd, MLME_QUEUE_ELEM *Elem);
 #ifdef DOT11_VHT_AC
-static void PeerVHTAction(PRTMP_ADAPTER pAd, MLME_QUEUE_ELEM *Elem);
+static void PeerVHTAction(RTMP_ADAPTER *pAd, MLME_QUEUE_ELEM *Elem);
 #endif
 /*
 	==========================================================================
