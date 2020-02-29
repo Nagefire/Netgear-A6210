@@ -5,7 +5,12 @@ arch:
 compiler:
   - clang
 
+before_install:
+  - sudo apt-get install -y linux-headers
+
 install: skip
 
 script:
+  - ver=$(uname -r)
+  - sudo mkdir -p /lib/modules/$(ver)/build
   - make
